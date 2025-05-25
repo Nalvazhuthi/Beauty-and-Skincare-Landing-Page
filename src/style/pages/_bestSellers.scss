@@ -1,0 +1,86 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.bestSellers-container {
+  height: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .header {
+    font-size: 2.5rem;
+    padding-bottom: 20px;
+
+    @include scroll-reveal;
+  }
+
+  .shop {
+    margin: 20px 0;
+    font-weight: bold;
+    cursor: pointer;
+    @include scroll-reveal;
+  }
+
+  .bestSeller-product {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    .bestseller-product-wrapper {
+      flex: 1;
+      @include flex-center;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+
+      animation: appear 5s linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+      img {
+        width: 100%; /* Ensure the image takes full width of the wrapper */
+        height: 445px;
+        object-fit: cover;
+      }
+      .productName {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      .addToCard {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 0;
+        border: 1px solid $pink;
+        @include flex-center;
+        gap: 20px;
+        .addToCard-section {
+          position: relative;
+          text-transform: capitalize;
+          &:after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 60%;
+            top: 50%;
+            right: -10px;
+            transform: translate(0, -50%);
+            background-color: $pink;
+          }
+        }
+      }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .bestSeller-product {
+    flex-direction: column !important;
+    gap: 20px !important;
+    .addToCard {
+      margin-top: 0 !important;
+    }
+  }
+}

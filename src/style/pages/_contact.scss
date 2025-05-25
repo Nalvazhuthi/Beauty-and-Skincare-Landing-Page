@@ -1,0 +1,49 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.contact-container {
+  height: auto;
+  padding: 100px 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .header {
+    font-size: 4rem;
+    text-align: center;
+
+    @include scroll-reveal;
+  }
+  .message {
+    text-align: center;
+    @include scroll-reveal;
+  }
+
+  .send-messgae {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    @include scroll-reveal;
+    input {
+      width: 60%;
+      border: 1px solid $text-color;
+      padding: 10px;
+    }
+    button {
+      width: 20%;
+      border: 1px solid $text-color;
+    }
+  }
+  .signup-messgae {
+    @include scroll-reveal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 50px 0;
+    .header {
+      font-size: 3rem;
+    }
+  }
+}

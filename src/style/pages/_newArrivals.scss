@@ -1,0 +1,176 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.newArrivals-container {
+  height: auto;
+  padding: 80px 50px;
+
+  .header {
+    @include flex-center;
+    position: relative;
+    margin-bottom: 40px;
+
+    @include scroll-reveal;
+
+    .head {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .viewAllProducts {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: absolute;
+      right: 0;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #0056b3; // Darker blue on hover
+      }
+
+      .icon {
+        width: 16px;
+        height: 16px;
+        fill: #007bff;
+        transition: fill 0.3s ease;
+
+        &:hover {
+          fill: #0056b3; // Darker blue on hover
+        }
+      }
+    }
+  }
+
+  .products-container {
+    @include flex-space-between;
+    flex-wrap: wrap;
+    gap: 30px; // Increased space between products
+
+    .products-wrapper {
+      width: calc(33.333% - 20px); // 3 products per row, with spacing
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s linear;
+
+      animation: appear 5s linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+
+      .product-image {
+        width: 100%;
+        height: 300px;
+        background-color: #e7e5e0;
+        background-size: cover;
+        background-position: center;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+        .buy-btn {
+          position: absolute;
+          bottom: -50px;
+          width: 80%;
+          background-color: $primary-color;
+          left: 50%;
+          transform: translate(-50%, 0);
+          text-align: center;
+          padding: 5px 0;
+          font-size: 0.8rem;
+          transition: bottom 0.25s linear;
+        }
+      }
+
+      .product-details {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .product-name {
+          font-size: 1.1rem;
+        }
+
+        .product-price-details {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 20px;
+
+          .old-price {
+            font-size: 1rem;
+            color: #888;
+            text-decoration: line-through;
+          }
+
+          .new-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+          }
+        }
+      }
+
+      &:hover {
+        transform: translateY(-5px); // Slight hover lift effect
+        .buy-btn {
+          bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design: Stack products in single column on small screens
+
+@media (max-width: 768px) {
+  .newArrivals-container {
+    padding: 60px 20px;
+  }
+
+  .products-container {
+    gap: 20px;
+  }
+
+  .products-wrapper {
+    width: calc(50% - 20px); // 2 products per row
+  }
+}
+
+@media (max-width: 480px) {
+  .newArrivals-container {
+    .header {
+      flex-direction: column;
+      .viewAllProducts {
+        padding-top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        position: relative !important;
+      }
+    }
+    .newArrivals-container {
+      padding: 40px 10px;
+    }
+
+    .products-container {
+      gap: 10px;
+      flex: 1;
+      .products-wrapper {
+        width: 100% !important; // Single product per row on small screens
+      }
+    }
+
+    .product-image {
+      height: 200px; // Reduce image height on smaller screens
+    }
+  }
+}

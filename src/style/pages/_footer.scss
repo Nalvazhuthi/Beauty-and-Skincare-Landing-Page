@@ -1,0 +1,112 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+
+.footer {
+  background-color: $text-color;
+  color: $primary-color;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $primary-color;
+  }
+
+  &__info {
+    max-width: 300px;
+
+    strong {
+      display: inline-block;
+      margin-bottom: 0.25rem;
+    }
+
+    a {
+      color: $primary-color;
+      text-decoration: underline;
+      display: inline-block;
+      margin-top: 0.25rem;
+    }
+  }
+
+  &__logo {
+    color: $primary-color;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__address,
+  &__contact {
+    strong {
+      color: $primary-color;
+    }
+    color: $primary-color;
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+
+  &__socials {
+    color: $primary-color;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    i {
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #aaa;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 4rem;
+    margin-top: 1rem;
+
+    .footer__column {
+      p {
+        margin: 0.5rem 0;
+        cursor: pointer;
+        color: #ddd;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    font-size: 0.875rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    p {
+      color: $primary-color;
+    }
+  }
+
+  &__policies {
+    color: $primary-color;
+    a {
+      margin-left: 2rem;
+      color: $primary-color;
+      text-decoration: underline;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use "./abstract/functions";
+@use "./abstract/mixins";
+@use "./abstract/variables";
+
+@use "./base/base";
+@use "./base/global";
+@use "./base/reset";
+@use "./base/typography";
+
+@use "./pages/home";
+@use "./pages/essentials";
+@use "./pages/newArrivals";
+@use "./pages/highlights";
+@use "./pages/bestSellers";
+@use "./pages/contact";
+@use "./pages/footer";
