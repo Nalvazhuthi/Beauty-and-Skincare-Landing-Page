@@ -31,7 +31,7 @@ const Home = () => {
     <div className="home-container section">
       <div className="home-wrapper">
         <div className="bg-image">
-          <img src={bgImage} alt="No image" />
+          <img src={bgImage} alt="No backgroung" />
         </div>
         <div className="header-wrapper">
           <div className="header">
