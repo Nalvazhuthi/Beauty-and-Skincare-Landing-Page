@@ -1,4 +1,9 @@
-import React from 'react';
+import React from "react";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+} from "../assets/svg/exportSvg";
 
 const Footer = () => {
   return (
@@ -7,21 +12,17 @@ const Footer = () => {
         <div className="footer__info">
           <h2 className="footer__logo">Logo</h2>
           <p className="footer__address">
-            <strong>Address:</strong><br />
+            <strong>Address:</strong>
+            <br />
             USA, California
           </p>
           <p className="footer__contact">
-            <strong>Contact:</strong><br />
-            <a href="tel:18001234567">1800 123 4567</a><br />
+            <strong>Contact:</strong>
+            <br />
+            <a href="tel:18001234567">1800 123 4567</a>
+            <br />
             <a href="mailto:javaria.y2b@gmail.com">javaria.y2b@gmail.com</a>
           </p>
-          <div className="footer__socials">
-            <i className="fab fa-facebook"></i>
-            <i className="fab fa-instagram"></i>
-            <i className="fab fa-x-twitter"></i>
-            <i className="fab fa-linkedin"></i>
-            <i className="fab fa-youtube"></i>
-          </div>
         </div>
 
         <div className="footer__links">
@@ -44,6 +45,17 @@ const Footer = () => {
 
       <div className="footer__bottom">
         <p>© 2023 Javaria. All rights reserved.</p>
+        <div className="footer__socials">
+          <div>
+            <FacebookIcon />
+          </div>
+          <div>
+            <InstagramIcon />
+          </div>
+          <div>
+            <LinkedinIcon />
+          </div>
+        </div>
         <div className="footer__policies">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>

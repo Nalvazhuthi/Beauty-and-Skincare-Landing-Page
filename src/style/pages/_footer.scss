@@ -9,6 +9,7 @@
   flex-direction: column;
 
   &__top {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -44,30 +45,18 @@
     strong {
       color: $primary-color;
     }
+
     color: $primary-color;
     margin: 1rem 0;
     line-height: 1.6;
   }
 
-  &__socials {
-    color: $primary-color;
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
 
-    i {
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: color 0.2s ease;
-
-      &:hover {
-        color: #aaa;
-      }
-    }
-  }
 
   &__links {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     gap: 4rem;
     margin-top: 1rem;
 
@@ -92,6 +81,29 @@
     font-size: 0.875rem;
     flex-wrap: wrap;
     gap: 1rem;
+
+    .footer__socials {
+      color: $primary-color;
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      align-items: center;
+
+      div {
+        display: flex;
+      }
+
+      i {
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: #aaa;
+        }
+      }
+    }
+
     p {
       color: $primary-color;
     }
@@ -99,6 +111,7 @@
 
   &__policies {
     color: $primary-color;
+
     a {
       margin-left: 2rem;
       color: $primary-color;

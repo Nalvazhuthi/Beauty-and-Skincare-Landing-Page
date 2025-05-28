@@ -30,7 +30,7 @@
       color: #007bff;
       font-weight: 500;
       transition: color 0.3s ease;
-
+      cursor: pointer;
       &:hover {
         color: #0056b3; // Darker blue on hover
       }
@@ -58,7 +58,7 @@
       border-radius: 8px;
       overflow: hidden;
       transition: transform 0.2s linear;
-
+      cursor: pointer;
       animation: appear 5s linear;
       animation-timeline: view();
       animation-range: entry 0% cover 40%;
@@ -72,11 +72,13 @@
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
+
         img {
           width: 100%;
           height: 100%;
           object-fit: contain;
         }
+
         .buy-btn {
           position: absolute;
           bottom: -50px;
@@ -96,6 +98,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+
         .product-name {
           font-size: 1.1rem;
         }
@@ -121,6 +124,7 @@
 
       &:hover {
         transform: translateY(-5px); // Slight hover lift effect
+
         .buy-btn {
           bottom: 20px;
         }
@@ -149,6 +153,7 @@
   .newArrivals-container {
     .header {
       flex-direction: column;
+
       .viewAllProducts {
         padding-top: 30px;
         width: 100%;
@@ -157,6 +162,7 @@
         position: relative !important;
       }
     }
+
     .newArrivals-container {
       padding: 40px 10px;
     }
@@ -164,6 +170,7 @@
     .products-container {
       gap: 10px;
       flex: 1;
+
       .products-wrapper {
         width: 100% !important; // Single product per row on small screens
       }
