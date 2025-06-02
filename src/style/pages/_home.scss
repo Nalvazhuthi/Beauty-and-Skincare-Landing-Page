@@ -21,7 +21,7 @@
 
     .bg-image {
       width: 100%;
-      height: 100%;
+      height: 100vh;
       position: absolute;
       top: 0;
       left: 0;
@@ -183,9 +183,18 @@
       background-color: $primary-color;
       transition: top 0.2s linear;
       z-index: -1;
+      .nav,
+      .sales {
+        transition: all 2s linear;
+        left: -100%;
+      }
 
       &.open {
         top: 100%;
+        .nav,
+        .sales {
+          left: 0;
+        }
       }
     }
   }

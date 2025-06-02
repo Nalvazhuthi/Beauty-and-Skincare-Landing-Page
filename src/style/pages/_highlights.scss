@@ -53,3 +53,14 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .highlights-wrapper {
+    gap: 20px !important;
+    .image {
+      img {
+        height: fit-content !important;
+      }
+    }
+  }
+}

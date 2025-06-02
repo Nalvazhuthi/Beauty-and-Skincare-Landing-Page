@@ -51,8 +51,6 @@
     line-height: 1.6;
   }
 
-
-
   &__links {
     width: 100%;
     display: flex;
@@ -120,6 +118,19 @@
       &:hover {
         color: $primary-color;
       }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__bottom,
+  .footer__policies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      margin: 0;
+      margin-top: 1rem;
     }
   }
 }
